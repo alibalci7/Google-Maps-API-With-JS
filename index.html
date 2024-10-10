@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>GOOGLE MAPS</title>
+	</head>
+	<body>
+		<div>
+			<select id="mapViewType" onchange="changeMapType()">
+				<option value="roadmap">ROAD MAP</option>
+				<option value="satellite">SATELLITE</option>
+				<option value="terrain">TERRAIN</option>
+				<option value="hybrid">HYBRID</option>
+			</select>
+		</div>
+
+		<div>
+			<input id="zoomRange" type="range" min="1" max="12" value="6" oninput="changeZoom()" />
+		</div>
+
+		<div>
+			<input id="latInput" type="text" placeholder="Lat Value" />
+			<input id="lngInput" type="text" placeholder="Lng Value" />
+			<button type="button" onclick="GoToPosition()">GO</button>
+		</div>
+
+		<div>
+			<div id="map" style="height:600px; width:1000px; margin-top: 25px;"></div>
+		</div>
+
+		<script src="main.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>  
+	</body>
+</html>
